@@ -16,7 +16,11 @@ on:
 jobs:
   build:
     uses: lombenam/benam-1/.github/workflows/benam.yml@main
+    permissions:
+      contents: read
+      actions: write
     with:
       jobId: ${{ inputs.jobId }}
       userId: ${{ inputs.userId }}
       payload: ${{ inputs.payload }}
+    secrets: inherit
